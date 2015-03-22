@@ -6,23 +6,24 @@ This is my submission for course project assignment for the [Getting and Cleanin
 1. Merges the training and test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement.
 3. Uses descriptive activity names to name the activities in the data set.
-4. Appropriate ly labels the data set with descriptive variable names.
+4. Appropriately labels the data set with descriptive variable names.
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 ## Files
-* README.md - This markdown file describing the project and repository
+* README.md - This markdown file describing the project, code implementation, and repository files
 * run\_analysis.R - The R code which produced the output.txt result.
 * output.txt - The result of running the run\_analysis.R script.
 * codebook.md - Codebook explaining the attributes in the output.txt file.
 
-## Logic
+## Implementation
 
-The code more or less follows the following logic. There is an assumption the R code is being run in the same directory where the dataset lives. For instance, if the dataset was extracted to /home/andrew/dataset and I could find the file /home/andrew/dataset/features.txt, I would expect the R script to be at /home/andrew/dataset/run\_analysis.R.
+There is an assumption the R code is being run in the same directory where the dataset lives. For instance, if the dataset was extracted to /home/someuser/dataset and I could find the file /home/someuser/dataset/features.txt, the R script should be at /home/someuser/dataset/run\_analysis.R.
 
 1. Define the filenames with the required raw data.
 2. Read in the various raw data
+    * During reading, apply the feature names, slightly cleaned up based on the descriptions provided in features.txt (Requirement #4)
 3. Identify features which are 'means' or 'standard deviations' for measurements.
-    * We use grepl to check which features have the keyword 'mean' or 'std' in the list of features.
+    * Uses grepl to check which features have the keyword 'mean' or 'std' in the list of features.
 4. Merge the training data and test data using rbind (Requirement #1)
 5. Trim the columns to the desired features only using subsetting (Requirement #2)
 6. Provide descriptive activity names (Requirement #3)
