@@ -19,7 +19,14 @@ The row would mean that for all the measurements of SubjectID 1 performing the l
 * SubjectID - The ID number of the subject
 * Activity - One of 6 possible activity values: WALKING, WALKING\_UPSTAIRS, WALKING\_DOWNSTAIRS, SITTING, STANDING, LAYING
 
-The remaining columns are measurements extracted from the [source dataset ](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#). The following description is copied from the original features\_info.txt in the dataset. A feature named 'tBodyAcc\_mean\_X' represents the mean of the time domain signals for the body acceleration in the X direction.
+The remaining columns are measurements extracted from the [source dataset ](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#). The following description is copied from the original features\_info.txt in the dataset. This output uses the same measurement names as the original source but provides two transformations to make for proper R validations:
+* we remove any \(\) parentheses from the measurement name e.g mean\(\) -> mean
+* we replace \-'s with \_'s e.g mean\-X -> mean\_X
+
+For example: tBodyAcc\-mean\(\)\-X -> tBodyAcc\_mean\_X
+
+### Column Names in Output
+A feature named 'tBodyAcc\_mean\_X' represents the mean of the time domain signals for the body acceleration in the X direction.
 
 * tBodyAcc\_mean\_X
 * tBodyAcc\_mean\_Y
@@ -101,9 +108,6 @@ The remaining columns are measurements extracted from the [source dataset ](http
 * fBodyBodyGyroMag\_std
 * fBodyBodyGyroJerkMag\_std
 
-
-
-
 ### Feature Details
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
@@ -115,26 +119,25 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
-
+* tBodyAcc-XYZ
+* tGravityAcc-XYZ
+* tBodyAccJerk-XYZ
+* tBodyGyro-XYZ
+* tBodyGyroJerk-XYZ
+* tBodyAccMag
+* tGravityAccMag
+* tBodyAccJerkMag
+* tBodyGyroMag
+* tBodyGyroJerkMag
+* fBodyAcc-XYZ
+* fBodyAccJerk-XYZ
+* fBodyGyro-XYZ
+* fBodyAccMag
+* fBodyAccJerkMag
+* fBodyGyroMag
+* fBodyGyroJerkMag
+ 
 The set of variables that were estimated from these signals are: 
 
-mean: Mean value
-std: Standard deviation
-
+* mean: Mean value
+* std: Standard deviation
