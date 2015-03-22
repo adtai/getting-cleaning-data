@@ -19,7 +19,7 @@ The row would mean that for all the measurements of SubjectID 1 performing the l
 * SubjectID - The ID number of the subject
 * Activity - One of 6 possible activity values: WALKING, WALKING\_UPSTAIRS, WALKING\_DOWNSTAIRS, SITTING, STANDING, LAYING
 
-The remaining columns are measurements in the original dataset. The following description is copied from the original features\_info.txt in the dataset. A feature named 'tBodyAcc\_mean\_X' represents the mean of the time domain signals for the body acceleration in the X direction.
+The remaining columns are measurements extracted from the [source dataset ](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#). The following description is copied from the original features\_info.txt in the dataset. A feature named 'tBodyAcc\_mean\_X' represents the mean of the time domain signals for the body acceleration in the X direction.
 
 * tBodyAcc\_mean\_X
 * tBodyAcc\_mean\_Y
